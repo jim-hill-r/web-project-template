@@ -8,7 +8,7 @@ Includes:
   - Dynamic navigation based on user permissions
   - Runs fully local including Mock implementations of dependent services
   - Provisioning / Deploy scripts for hosting on AWS Cloudfront
-- Web Service (Apollo GQL Server) (Typescript)
+- Web Api Service (Apollo GQL Server) (Typescript)
   - Scaffolding for custom schema
   - User and user permissions schema
   - OIDC authentication flows
