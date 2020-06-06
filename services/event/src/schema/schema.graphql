@@ -1,0 +1,7 @@
+type Event {
+  topic: String
+}
+
+type Query {
+  events: [Event]
+}

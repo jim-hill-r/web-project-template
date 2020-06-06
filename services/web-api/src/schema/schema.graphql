@@ -1,0 +1,7 @@
+type User {
+  permissions: [String]
+}
+
+type Query {
+  user(id: String): User
+}
