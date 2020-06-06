@@ -1,2 +1,27 @@
-# web-project-template
-Template for all new web projects.
+Includes:
+- Web App (Gatsby, React, Apollo GQL Client) (Typescript)
+  - PWA
+  - Material UI mobile & desktop friendly reactive layouts
+  - SEO & static pages (for blogs or marketing sites)
+  - Script typescript
+  - OIDC authentication flows
+  - Dynamic navigation based on user permissions
+  - Runs fully local including Mock implementations of dependent services
+  - Provisioning / Deploy scripts for hosting on AWS Cloudfront
+- Web API (Apollo GQL Server) (Typescript)
+  - Scaffolding for custom schema
+  - User and user permissions schema
+  - OIDC authentication flows
+  - Authorization based on user permissions within resolver context
+  - Runs fully local including Mock implementations of dependent services
+  - Provisioning / Deploy scripts for hosting on AWS lambda
+- User Store (Apollo GQL Server, DynamoDB) (Typescript)
+  - User and user permissions schema
+  - OAuth2 Client Credentials protected
+  - Runs fully local including Mock implementations of dependent services
+  - Provisioning / Deploy scripts for hosting on AWS lambda & DynamoDB
+- Scaffolding Store (Apollo GQL Server, DynamoDB) (Typescript)
+  - Scaffolding for custom data store
+  - OAuth2 Client Credentials protected
+  - Runs fully local including Mock implementations of dependent services
+  - Provisioning / Deploy scripts for hosting on AWS lambda & DynamoDB
