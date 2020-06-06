@@ -1,5 +1,9 @@
+import React from "react"
+
 const DrawerContent = () => {
     return (
-        <div> </div>
+        <div> Drawing Content </div>
     )
 }
+
+export default DrawerContent

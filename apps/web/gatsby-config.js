@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `TODO: Update title.`,
-    description: `TODO: Update description.`,
-    author: `TODO: Update authoer. Ex: @jim_hill_r`,
+    title: `TODO: Update title`,
+    description: `TODO: Update description`,
+    author: `TODO: Update author Ex: @jim_hill_r`,
   },
   plugins: [
     `gatsby-plugin-material-ui`,

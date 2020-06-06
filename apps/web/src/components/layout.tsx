@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, navigate, Link } from "gatsby"
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography"
 import AppBar from "@material-ui/core/AppBar"
@@ -17,6 +17,15 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz"
 import MenuIcon from "@material-ui/icons/Menu"
 import "./layout.css"
 
+const navItems = [
+  { label: "Primary", icon: "<HomeIcon />", route: "/primary" },
+  { label: "Secondary", icon: "<FavoriteIcon />", route: "/secondary" },
+  { label: "Tertiary", icon: "<LocationOnIcon />", route: "/tertiary" },
+  { label: "Quarternary", icon: "<RestoreIcon />", route: "/quarternary" },
+  { label: "Overflow One", route: "/overflow/one" },
+  { label: "Overflow Two", route: "/overflow/two" }
+]
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -24,6 +33,20 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     menuButton: {
       marginRight: theme.spacing(2),
+    },
+    title: {
+      textDecoration: 'none',
+      color: 'white'
+    },
+    stickToBottom: {
+      width: '100%',
+      position: 'fixed',
+      bottom: 0,
+    },
+    main: {
+      margin: `0 auto`,
+      maxWidth: 960,
+      padding: `0 1.0875rem 1.45rem`,
     },
   }),
 );
@@ -69,42 +92,37 @@ const Layout = ({ children } : { children : any}) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit">
-            {data.site.siteMetadata.title}
+            <Link to="/" className={classes.title}> {data.site.siteMetadata.title} </Link>
           </Typography>
         </Toolbar>
       </AppBar>
+
       <Drawer anchor={anchor} open={state.isDrawerOpen} onClose={toggleDrawer(false)} >
         <div onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)} >
-          Stuff goes here
+          © {new Date().getFullYear()}
         </div>
       </Drawer>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+
+      <div className={classes.main} >
         <main>{children}</main>
-
-        © {new Date().getFullYear()}
-
-        <footer>
-          <BottomNavigation
-            //value={value}
-            //onChange={(event, newValue) => {
-            //  setValue(newValue);
-            //}}
-            showLabels
-          >
-            <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-            <BottomNavigationAction label="Restore" icon={<RestoreIcon />} />
-            <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-            <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
-            <BottomNavigationAction label="More" icon={<MoreHorizIcon />} />
-          </BottomNavigation>
-        </footer>
       </div>
+
+      <footer>
+        <BottomNavigation
+          value='-1'
+          onChange={(event, newValue: number) => {
+            navigate(navItems[newValue].route)
+          }}
+          showLabels
+          className={classes.stickToBottom}
+        >
+          <BottomNavigationAction label={navItems[0].label} icon={<HomeIcon />} />
+          <BottomNavigationAction label={navItems[1].label} icon={<FavoriteIcon />} />
+          <BottomNavigationAction label={navItems[2].label} icon={<LocationOnIcon />} />
+          <BottomNavigationAction label={navItems[3].label} icon={<RestoreIcon />} />
+          <BottomNavigationAction label="More" icon={<MoreHorizIcon />} />
+        </BottomNavigation>
+      </footer>
     </>
   )
 }

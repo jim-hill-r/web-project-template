@@ -3,6 +3,7 @@
 - Update `gatsby-config.js` plugin `gatsby-plugin-manifest` to match new application branding.
 - Update `gatsby-config.js` plugin `gatsby-plugin-offline` to match new application branding.
 - Update `src\images\icon.png` to match new application icons.
+- Search for `SEO` in all files and update as necessary.
 
 ## Run local
 - Run `npm install`
