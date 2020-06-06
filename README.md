@@ -15,11 +15,11 @@ Includes:
   - Authorization based on user permissions within resolver context
   - Runs fully local including Mock implementations of dependent services
   - Provisioning / Deploy scripts for hosting on AWS lambda
-- TODO: Event Service (Apollo GQL Server, Kafka) (Typescript) 
+- Event Service (Apollo GQL Server, DynamoDB) (Typescript) 
   - Scaffolding for eventing system
   - OAuth2 Client Credentials protected
   - Runs fully local including Mock implementations of dependent services
-  - Provisioning / Deploy scripts for hosting on AWS MSK
+  - Provisioning / Deploy scripts for hosting on AWS lambda & DynamoDB (as the event store)
 - User Store (Apollo GQL Server, DynamoDB) (Typescript)
   - User and user permissions schema
   - OAuth2 Client Credentials protected
